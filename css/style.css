@@ -1,0 +1,222 @@
+body{
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-weight: lighter;
+}
+
+.container-main{
+
+}
+
+header{
+	background: #000;
+}
+
+main{
+	flex: 1 0 auto;
+}
+
+footer{
+
+}
+
+.navbar{
+	background: #000;
+	padding: 0px;
+	margin: 0px;
+	height: 80px;
+}
+
+.nav-table{
+	display: table;
+	width: 100%;
+}
+
+.nav-table-row{
+	display: table-row;
+}
+
+.nav-table-cell{
+	display: table-cell;
+}
+
+.navbar-menu{
+	width: 80%;
+}
+
+.search-cell{
+	width: 20%;
+}
+
+.navbar-menu ul{
+	list-style:none;
+	position:relative;
+}
+
+.navbar-menu ul a:link, .navbar-menu ul a:visited{
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	font-weight: lighter;
+}
+
+.navbar-menu ul li{
+	position: relative;
+	float: left;
+	padding: 5px 10px 5px 30px;
+}
+
+.navbar-menu ul ul{
+	display:none;
+	position:absolute;
+	width: 300px;
+	background: #000;
+	top: 30px;
+	left: 30px;
+	padding: 20px 0px;
+	z-index: 10000000;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+.navbar-menu ul ul li{
+	padding: 5px;
+	margin: 0px;
+}
+
+
+.navbar-menu ul ul li a{
+	width: 300px;
+	padding-left: 10px;
+}
+
+.navbar-menu ul ul li:hover{
+	background: #fff;
+	color: #000;
+}
+
+.navbar-menu ul ul li a:hover{
+	background: #fff;
+	color: #000; 
+}
+
+.navbar-menu ul li:hover > ul{
+	display:block;
+}
+
+/* login form CSS*/
+
+.login-form-container{
+	width: 100%;
+	background: #000;
+}
+
+.login-form{
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.form-control{
+	background: #000;
+	border: none;
+}
+
+.label-text-color{
+	color: #fff;
+	font-weight: lighter;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select, option{
+	background: #fff;
+	border: solid thin green;
+}
+
+.show-password{
+	color: #fff;
+	font-weight: lighter;
+	font-size: 80%;
+}
+
+.main-display{
+	min-width: 70%;
+}
+
+
+/* Home CSS*/
+
+.modal-background{
+	background: #000 !important;
+	color: #fff;
+}
+
+.checkbox-padding{
+	padding: 10px 50px;
+}
+
+/*.form-check-input{
+	margin-left: 50px;
+}*/
+
+.table-tag-text{
+	width: 20%;
+	padding: 5px 0px;
+	text-align: right;
+}
+
+.table-value-text{
+	width: 80%;
+	text-align: center;
+}
+
+th.rotate {
+  /* Something you can count on */
+  height: 170px;
+  white-space: nowrap;
+  font-weight: lighter;
+}
+
+th.rotate > div {
+  transform: 
+    /* Magic Numbers */
+    /*translate(25px, 51px)*/
+    /* 45 is really 360 - 45 */
+    rotate(270deg);
+  width: 35px;
+}
+th.rotate > div > span {
+  /*border-bottom: 1px solid #ccc;*/
+  padding: 5px 10px;
+}
+
+.student-details, th.rotate, .student-remark{
+  font-weight: lighter;
+}
+
+.student-details, .student-remark{
+	 text-align: center;
+}
+
+.student-remark{
+	rotate(0deg);
+	 width: 150px;
+}
+
+.not-rotate{
+	 rotate(0deg);
+	 text-align: center;
+	 width: 35px;
+}
+
+.content-home-height{
+	height: 150px;
+}
+
+.count-text{
+	font-size: 40px;
+}

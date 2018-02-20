@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="keywords" content="" />
+	<meta name="author" content="Ode Akugbe" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Student Record Management System</title>
+</head>
+<body>
+	<header class="bg-black">
+		<nav>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7">
+							
+					</div>
+					<div class="col-md-5">
+						<div class="navbar">
+							<!-- this section will display menu and search bar -->
+							<div class="nav-table">
+								<div class="nav-table-row">
+									<div class="nav-table-cell navbar-menu">
+										<!-- menu bar here -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 offset-lg-4"><br><br>
+					<div class="login-form-container">
+						<form class="login-form"><br>
+							<h3 align="center" style="color: #fff;">Sign In Form</h3>
+							<div class="form-comtrol">
+								<small id="error-message" class="form-text text-danger"></small>
+							</div>
+							<div class="form-group">
+								<label class="label-text-color">Username</label>
+								<input class="form-control" type="text" name="" id="username-field">
+							</div>
+							<div class="form-group">
+								<label class="label-text-color">Password</label>
+								<input class="form-control" type="password" name="" id="password-field">
+							</div>
+							<div>
+								<!-- &nbsp;&nbsp;&nbsp;<input class="form-check-input" type="checkbox" name="" id="show-password">&nbsp;<span class="show-password">Show Password</span> -->
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="checkbox" id="show-password" value="option1">
+								  <label class="form-check-label show-password" for="show-password">Show Password</label>
+								</div>
+							</div>
+							<br>
+							<div class="form-group" style="text-align: center;">
+								<input id="log-in" class="btn btn-sm btn-outline-success" type="button" name="" value="Log In">
+							</div><br><br>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main><br><br>
+
+	<footer class="container-fluid" style="background: #000; height: 50px; color: #fff; font-weight: lighter; font-size: 80%;">
+		<div class="container" style="padding-top: 20px;">
+			&copy; 2018 Moat Academy, All right reserved.
+		</div>	
+	</footer>
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/database.js"></script>
+	<script>
+		var checkBox = getByID("show-password");
+		var usernameField = getByID("username-field");
+		var passwordField = getByID("password-field");
+		var errorMessage = getByID("error-message");
+		var loginButton = getByID("log-in");
+
+		function getByID(elementId){
+			return document.getElementById(elementId);
+		}
+
+		function togglePasswordVisibilty(e){
+			e.preventDefault();
+			
+			if (passwordField.value == ""){
+				passwordField.style.borderColor = "red";
+				errorMessage.innerText = "Password field is empty!";
+			} else {
+				if (checkBox.checked){
+					passwordField.type = "text";
+				} else {
+					passwordField.type = "password";
+				}
+			}
+		}
+
+		function passwordFieldClick(e){
+			e.preventDefault();
+			passwordField.style.borderColor = "green";
+			usernameField.style.borderColor = "green";
+			errorMessage.innerText = "";
+		}
+
+		function usernameFieldClick(e){
+			e.preventDefault();
+			passwordField.style.borderColor = "green";
+			usernameField.style.borderColor = "green";
+			errorMessage.innerText = "";
+		}
+
+		function login(e){
+			e.preventDefault();
+
+			var usernameValue = usernameField.value;
+			var passwordValue = passwordField.value;
+
+			//console.log('click', Admin[0].username);
+
+			if ((usernameValue == "") && (passwordValue == "")){
+				passwordField.style.borderColor = "red";
+				usernameField.style.borderColor = "red";
+				errorMessage.innerText = "Username and Password fields are empty";
+			} else if (usernameValue == ""){
+				usernameField.style.borderColor = "red";
+				errorMessage.innerText = "Username fields is empty";
+			} else if (passwordValue == ""){
+				passwordField.style.borderColor = "red";
+				errorMessage.innerText = "Password fields is empty";
+			} else {
+				for (var i = 0; i < Admin.length; i++) {
+					if ((usernameValue == Admin[i].username) && (passwordValue == Admin[i].password)){
+						
+						window.location = "home.html";
+						usernameField.value = "";
+						passwordField.value = "";
+
+					} else {
+						errorMessage.innerText = "Invalid Username and Password!";
+					}
+				}
+			}
+		}
+
+
+		checkBox.addEventListener("click", togglePasswordVisibilty, false);
+		passwordField.addEventListener("click", passwordFieldClick, false);
+		usernameField.addEventListener("click", usernameFieldClick, false);
+		loginButton.addEventListener("click", login, false);
+	</script>
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="keywords" content="" />
+	<meta name="author" content="Ode Akugbe" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Student Record Management System</title>
+</head>
+<body>
+	<header class="bg-black">
+		<nav>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7">
+							
+					</div>
+					<div class="col-md-5">
+						<div class="navbar">
+							<!-- this section will display menu and search bar -->
+							<div class="nav-table">
+								<div class="nav-table-row">
+									<div class="nav-table-cell navbar-menu">
+										<br />
+										<ul>
+											<li><a id="home-link" href="#">Home</a></li>
+											<li><a class="" href="#">Edit</a>
+												<ul class="dropdown">
+													<li><a href="#" id="student-id-link" data-toggle="modal" data-target="#student-registeration">Register a Student</a></li>
+													<li><a href="#" id="course-id-link" data-toggle="modal" data-target="#add-course">Add a Course</a></li>
+													<li><a href="#" id="instructor-id-link" data-toggle="modal" data-target="#add-instructor">Add an Instructor</a></li>
+													<li><a href="#" id="student-delete-link" data-toggle="modal" data-target="#delete-student">Delete Student Account</a></li>
+													<li><a href="#" id="course-delete-link" data-toggle="modal" data-target="#delete-course">Delete a Course</a></li>
+													<li><a href="#" id="instructor-delete-link" data-toggle="modal" data-target="#delete-instructor">Delete Instructor Account</a></li>
+													<li><a href="#" id="student-course-form-link">Student Course Form</a></li>
+													<li><a href="#" id="student-exam-record-link">Student Examination Record</a></li>
+												</ul>
+											</li>
+											<li><a href="">View</a>
+												<ul class="dropdown">
+													<li><a id="a-students-result" href="#">View a Student Examination Details</a></li>
+													<li><a id="all-students-result" href="#">View a Class Examination Details</a></li>
+													<li><a id="console-display" href="#">View Database In Console</a></li>
+												</ul>
+											</li>
+											<li><a href="">About</a></li>
+											<li><a href="">Helps</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<div class="container-fluid"><br><br>
+			<div class="container" id="result-display-section" style="background: #000; color:#fff; font-weight: lighter;">
+				<!-- 0000000000000000000000000000000000000000000000 -->
+
+					
+
+				<!-- 0000000000000000000000000000000000000000000000 -->
+			</div>
+		<br><br></div>
+	</main>
+
+	<footer class="container-fluid" style="background: #000; height: 50px; color: #fff; font-weight: lighter; font-size: 80%;">
+		<div class="container" style="padding-top: 20px;">
+			&copy; 2018 Moat Academy, All right reserved.
+		</div>	
+	</footer>
+
+	<!-- 
+			000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+	 -->
+
+	 		<!--Student Registeeration Modal -->
+				<div class="modal fade" id="student-registeration" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content modal-background">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="modal-title">Register New Student</h5>
+				        <button type="button"  class="close text-danger" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				      	<div class="login-form-container">
+					      	<form class="login-form"><br>
+					      		<div class="form-comtrol">
+									<small id="student-error-message" class="form-text text-danger"></small>
+								</div>
+					      		<div class="form-group">
+					      			<label>Student ID</label>
+					      			<input type="text" name="" class="form-control" id="student-id" readonly>
+					      		</div>
+					      		<div class="form-group">
+					      			<label>Full Name</label>
+					      			<input type="text" name="" class="form-control" id="fullname">
+					      		</div>
+					      		<div class="form-group">
+					      			<label>Sex</label>
+					      			<select class="form-control" id="sex">
+					      				
+					      			</select>
+					      		</div>
+					      		<div class="form-group">
+					      			<label>Email</label>
+					      			<input type="email" name="" class="form-control" id="email">
+					      		</div>
+					      	</form>
+					    </div>
+				      </div>
+				    <div class="modal-footer">
+				        <!-- <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button> -->
+				        <button type="button" id="register-student-btn" class="btn btn-outline-success" data-dismiss="">Register Student</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+	 <!-- 
+			000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+	  -->
+
+	  <!-- 
+			000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+	 -->
+
+	 		<!--Add a Course Modal -->
+				<div class="modal fade" id="add-course" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content modal-background">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="modal-title">Add a Course</h5>
+				        <button type="button"  class="close text-danger" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				       	<div class="login-form-container">
+					      	<form class="login-form"><br>
+					      		<div class="form-comtrol">
+									<small id="course-error-message" class="form-text text-danger"></small>
+								</div>
+					      		<div class="form-group">
+					      			<label>Course ID</label>
+					      			<input type="text" name="" class="form-control" id="course-id" readonly>
+					      		</div>
+					      		<div class="form-group">
+					      			<label>Course Title</label>
+					      			<input type="text" name="" class="form-control" id="course-title">
+					      		</div>
+					      		<div class="form-group">
+					      			<label>Course Instructor</label>
+					      			<select class="form-control" id="instructor-select-option">
+					      				
+					      			</select>
+					      		</div>
+					      	</form>
+					    </div>
+				      </div>
+				      <div class="modal-footer">
+				        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+				        <button type="button" id="add-course-btn" class="btn btn-outline-success" data-dismiss="">Add Course</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+	 <!-- 
+			000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+	  -->
+
+	  <!-- 
+			000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+	 -->
+
+	 		<!--Add an Instructor Modal -->
+				<div class="modal fade" id="add-instructor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content modal-background">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="modal-title">Add an Instructor</h5>
+				        <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        <div class="login-form-container">
+					      	<form class="login-form"><br>
+					      		<div class="form-comtrol">
+									<small id="instructor-error-message" class="form-text text-danger"></small>
+								</div>
+					      		<div class="form-group">
+					      			<label>Instructor ID</label>
+					      			<input type="text" name="" class="form-control" id="instructor-id" readonly>
+					      		</div>
+					      		<div class="form-group">
+					      			<label>Full Name</label>
+					      			<input type="text" name="" class="form-control" id="instructor-name">
+					      		</div>
+					      	</form>
+					    </div>
+				      </div>
+				      <div class="modal-footer">
+				        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+				        <button type="button" id="add-instructor-btn" class="btn btn-outline-success" data-dismiss="">Add Instructor</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+	 <!-- 
+			000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+	  -->
+
+
+	  <!-- 
+			000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+	 -->
+
+	 		<!--Delete a Student Record Modal -->
+				<div class="modal fade" id="delete-student" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content modal-background">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="modal-title">Delete Student Record</h5>
+				        <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        <div class="login-form-container">
+					      	<form class="login-form"><br>
+					      		<div class="form-comtrol">
+									<small id="delete-student-error-message" class="form-text text-danger"></small>
+								</div>
+					      		<div class="form-group">
+					      			<label>Students Details</label>
+					      			<select class="form-control" id="delete-student-select">
+
+					      			</select>
+					      		</div>
+					      	</form>
+					    </div>
+				      </div>
+				      <div class="modal-footer">
+				        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+				        <button type="button" onclick="deleteStudentAccoount()" class="btn btn-outline-success" id="delete-student-btn" data-dismiss="">Delete Record</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+	 <!-- 
+			000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+	  -->
+
+	  <!-- 
+			000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+	 -->
+
+	 		<!--Delete a Course Record  Modal -->
+				<div class="modal fade" id="delete-course" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content modal-background">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="modal-title">Delete Course Record</h5>
+				        <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        <div class="login-form-container">
+					      	<form class="login-form"><br>
+					      		<div class="form-comtrol">
+									<small id="delete-course-error-message" class="form-text text-danger"></small>
+								</div>
+					      		<div class="form-group">
+					      			<label>Course Details</label>
+					      			<select class="form-control" id="delete-course-select">
+
+					      			</select>
+					      		</div>
+					      	</form>
+					    </div>
+				      </div>
+				      <div class="modal-footer">
+				        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+				        <button type="button" id="delete-course-btn" onclick="deleteCourseAccoount()" class="btn btn-outline-success" data-dismiss="">Delete Record</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+	 <!-- 
+			000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+	  -->
+
+	  <!-- 
+			000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+	 -->
+
+	 		<!--Delete a Instructor Record Modal -->
+				<div class="modal fade" id="delete-instructor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content modal-background">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="modal-title">Delete Instructor Record</h5>
+				        <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        <div class="login-form-container">
+					      	<form class="login-form"><br>
+					      		<div class="form-comtrol">
+									<small id="delete-instructor-error-message" class="form-text text-danger"></small>
+								</div>
+					      		<div class="form-group">
+					      			<label>Instructor Details</label>
+					      			<select class="form-control" id="delete-instructor-select">
+
+					      			</select>
+					      		</div>
+					      	</form>
+					    </div>
+				      </div>
+				      <div class="modal-footer">
+				        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+				        <button type="button" onclick="deleteInstructorAccoount()" class="btn btn-outline-success" id="delete-instructor-btn" data-dismiss="">Delete Record</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+	 <!-- 
+			000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+	  -->
+
+	  
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/database.js"></script>
+	<script src="js/student.js"></script>
+	<script src="js/course.js"></script>
+	<script src="js/instructor.js"></script>
+	<script src="js/courseForm.js"></script>
+	<script src="js/examination.js"></script>
+	<script src="js/studentResult.js"></script>
+	<script src="js/allStudent.js"></script>
+	<script src="js/home.js"></script>
+	<script>
+		window.onload = homePageDisplay();
+	</script>
+</body>
+</html>
